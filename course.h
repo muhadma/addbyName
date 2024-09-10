@@ -15,7 +15,7 @@ class Course {
     public: 
         Course(string topic) : topic(topic), size(0), yearlvl(0), program("") {
             capacity = 5;
-            students = new Student*[capacity];  // Allocate memory using new[]
+            students = (Student**)malloc(capacity * sizeof(Student*));  // Allocate memory using new[]
         }
 
         void addStudent(Student* s) {
